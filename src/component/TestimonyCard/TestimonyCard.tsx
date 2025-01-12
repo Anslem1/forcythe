@@ -28,7 +28,7 @@ const TestimonyCard: React.FC<TestimonyCardProps> = ({ testimony, index }) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             // When the element is in view, start the animation
-            const timeouts: NodeJS.Timeout[] = []
+            const timeouts: ReturnType<typeof setTimeout>[] = []
 
             const testimonyAnimationDuration = 5000 // 5 seconds
             const halfwayPoint = testimonyAnimationDuration / 1 // Halfway point of the animation

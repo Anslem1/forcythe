@@ -7,7 +7,7 @@ const BookACall = () => {
   const [fadebookACallText, setFadeBookACallText] = useState<boolean[]>([])
 
   useEffect(() => {
-    const timeouts: NodeJS.Timeout[] = []
+    const timeouts: ReturnType<typeof setTimeout>[] = []
     timeouts.push(
       setTimeout(() => {
         setFadeBookACallText(bookACallIntro.split(' ').map(() => true))
@@ -38,9 +38,7 @@ const BookACall = () => {
               }}
               className='inline-block'
             >
-  
-                {word}
-             
+              {word}
               <span>&nbsp;</span>
             </span>
           ))}

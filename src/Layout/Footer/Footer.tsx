@@ -1,4 +1,3 @@
-import React from 'react'
 import BookACall from './Component/BookACall'
 import FooterContact from './Component/FooterContact'
 

@@ -19,7 +19,7 @@ const Achievements = () => {
     // Set the interval duration based on the largest number
 
     // Set the intervals for each achievement number to increment
-    const intervals: NodeJS.Timeout[] = []
+    const intervals: ReturnType<typeof setTimeout>[] = []
 
     achievementInfo.achievements.forEach((achievement, index) => {
       const targetNumber = achievement.number
