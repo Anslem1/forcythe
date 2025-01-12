@@ -16,7 +16,7 @@ function App () {
       <div className='w-[60px] max-w-[60px] h-[60px] fixed bottom-[10px] right-[10px] rounded-full bg-[#0066cc] z-[9999]'>
         <div className='flex items-center justify-center h-full w-full cursor-pointer'>
           <img
-            src='/public/assets/icons/message-solid.svg'
+            src='/assets/icons/message-solid.svg'
             alt=''
             className='w-[30px] h-[30px]'
           />
