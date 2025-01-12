@@ -1,0 +1,19 @@
+@keyframes rotateGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.gradient-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+  background-size: 150% 150%; /* Larger background to allow for smooth movement */
+  animation: rotateGradient 8s linear infinite; /* Slower rotation */
+}

@@ -1,0 +1,20 @@
+{
+     "achievements": [
+          {
+               "number": 50,
+               "text": "Clients"
+          },
+          {
+               "number": 120,
+               "text": "Projects"
+          },
+          {
+               "number": 10,
+               "text": "Team Lead"
+          },
+          {
+               "number": 10,
+               "text": "Glorious Years"
+          }
+     ]
+}

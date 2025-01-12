@@ -1,0 +1,22 @@
+{
+     "blogs": [
+          {
+               "blogger": "The Reformist",
+               "time": "May 29th, 2024",
+               "title": "Will AI take over Art?",
+               "image": "/public/assets/images/blog/will-ai-take-over.webp"
+          },
+          {
+               "blogger": "The Reformist",
+               "time": "May 29th, 2024",
+               "title": "Cryptocurrency vs Tokens",
+               "image": "/public/assets/images/blog/cryptocurrency.webp"
+          },
+          {
+               "blogger": "The Reformist",
+               "time": "May 29th, 2024",
+               "title": "Cryptocurrency and Crypto assets",
+               "image": "/public/assets/images/blog/crypto-assets.webp"
+          }
+     ]
+}
