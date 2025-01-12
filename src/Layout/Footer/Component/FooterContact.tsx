@@ -1,11 +1,13 @@
+import { useState } from 'react'
+
 const FooterContact = () => {
   const images = [
-    '/public/assets/icons/socials/facebook.svg',
-    '/public/assets/icons/socials/instagram.svg',
-    '/public/assets/icons/socials/x.svg',
-    '/public/assets/icons/socials/linkedin.svg',
-    '/public/assets/icons/socials/youtube.svg',
-    '/public/assets/icons/socials/Icon.svg'
+    '/src/assets/icons/socials/facebook.svg',
+    '/src/assets/icons/socials/instagram.svg',
+    '/src/assets/icons/socials/x.svg',
+    '/src/assets/icons/socials/linkedin.svg',
+    '/src/assets/icons/socials/youtube.svg',
+    '/src/assets/icons/socials/Icon.svg'
   ]
 
   const footerText = [
@@ -17,6 +19,8 @@ const FooterContact = () => {
     'Careers',
     'Blog'
   ]
+
+  const [agree, setAgree] = useState(false)
   return (
     <>
       <div className='section-padding py-10 bg-[#071626]'>
@@ -33,7 +37,10 @@ const FooterContact = () => {
             </div>
             <div className='flex gap-3 mt-5 items-center'>
               <div className='w-5 h-5 border-2 rounded-full bg-transparent border-white cursor-pointer flex items-center justify-center'>
-                <div className='bg-white rounded-full w-2 h-2'></div>
+                <div
+                  onClick={() => setAgree(prev => !prev)}
+                  className={`${agree && ' bg-white'} rounded-full w-2 h-2`}
+                ></div>
               </div>
               <label htmlFor=''>
                 I agree to receive other notifications from Forcythe
@@ -43,7 +50,7 @@ const FooterContact = () => {
           <div className='grid grid-cols-1 md:grid-cols-3 lg:col-span-2 gap-10 md:gap-0'>
             <div className='lg:pl-14 md:col-span-2 md:pr-10'>
               <img
-                src='/public/assets/logo/forcythe-logo-white.svg'
+                src='/src/assets/logo/forcythe-logo-white.svg'
                 alt='forcythe logo'
                 className='mb-5 md:mb-8'
               />

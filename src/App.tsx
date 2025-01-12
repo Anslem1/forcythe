@@ -7,8 +7,8 @@ function App () {
   return (
     <>
       <Navbar />
-      <main className='w-full mt-[6.3rem] md:mt-[6.8rem] bg-primary-background text-light-grey'>
-        <div className="md:min-h-screen bg-[url('/assets/images/header-background.svg')] bg-no-repeat bg-top">
+      <main className='w-full mt-[6.3rem] md:mt-[7.8rem] bg-primary-background text-light-grey'>
+        <div className="md:min-h-screen bg-[url('/src/assets/images/header-background.svg')] bg-no-repeat bg-top">
           <Landing />
         </div>
         <Footer />

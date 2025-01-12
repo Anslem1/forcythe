@@ -33,7 +33,7 @@ const Navbar = () => {
               decoding='async'
               data-nimg='1'
               className='w-28 sm:w-32 md:w-auto'
-              src='/public/assets/logo/forcythe-logo-white.svg'
+              src='/src/assets/logo/forcythe-logo-white.svg'
             />
             <div className='hidden md:flex text-white items-center gap-4 text-base font-light cursor-pointer'>
               <p className='cursor-pointer'>About</p>
@@ -51,7 +51,7 @@ const Navbar = () => {
             onClick={() => setShowHamBurgerMenu(prev => !prev)}
           >
             <img
-              src='/public/assets/icons/menu.svg'
+              src='./assets/icons/menu.svg'
               alt=''
               width={18}
               height={18}

@@ -50,7 +50,7 @@ const Achievements = () => {
   }, []) // This effect only runs once on component mount
 
   return (
-    <div className="max-w-[52rem] mx-auto bg-[url('/assets/images/arc.svg')] lg:bg-[url('/assets/images/arc-L.svg')] bg-cover md:bg-contain lg:bg-contain bg-top bg-no-repeat">
+    <div className="max-w-[52rem] mx-auto bg-[url('/src/assets/images/arc.svg')] lg:bg-[url('/src/assets/images/arc-L.svg')] bg-cover md:bg-contain lg:bg-contain bg-top bg-no-repeat">
       <div className='pt-20 sm:pt-40 lg:pt-60 pb-10 md:pb-14 lg:pb-20 max-w-xl mx-auto text-center px-5'>
         <div className='mb-14 lg:mb-20 max-w-[19rem] md:max-w-md mx-auto'>
           <div>
