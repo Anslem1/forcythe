@@ -5,26 +5,30 @@ import FadeInText from '../../../component/FadeinText/FadeinText'
 
 const Testimonies = () => {
   const [selectedTestimony, setSelectedTestimony] = useState<number | null>(0)
+  const [animationFinished, setAnimationFinished] = useState(false) // New state to track if animation is done
   const logosRef = useRef<(HTMLDivElement | null)[]>([])
   const testimonyHeader =
     'Discover the transformative stories of startups that scaled new heights with us'
 
   const handleLogoClick = (i: number) => {
-    setSelectedTestimony(i) // Set the selected testimony to display its card
+    setSelectedTestimony(i)
+    setAnimationFinished(false) // Reset animation state on new selection
   }
 
-  // Automatically switch testimony every 10 seconds
   useEffect(() => {
+    // Automatically switch testimony every 10 seconds but only after animation is finished
     const interval = setInterval(() => {
-      setSelectedTestimony(prevIndex => {
-        const nextIndex = (prevIndex! + 1) % testimonies.companies.length
-        return nextIndex
-      })
-    }, 10000) // 10000ms = 10 seconds
+      if (animationFinished) {
+        setSelectedTestimony(prevIndex => {
+          const nextIndex = (prevIndex! + 1) % testimonies.companies.length
+          return nextIndex
+        })
+        setAnimationFinished(false) // Reset animation state after switching
+      }
+    }, 12000) // 12000ms = 12 seconds to allow animation time and delay before switching
 
-    // Cleanup interval on component unmount
     return () => clearInterval(interval)
-  }, [])
+  }, [animationFinished])
 
   return (
     <div className=''>
@@ -79,6 +83,7 @@ const Testimonies = () => {
               key={selectedTestimony}
               testimony={testimonies.companies[selectedTestimony]}
               index={selectedTestimony}
+              setAnimationFinished={setAnimationFinished} // Pass down the function to notify when animation finishes
             />
           </div>
         )}

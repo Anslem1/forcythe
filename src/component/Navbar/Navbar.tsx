@@ -19,7 +19,7 @@ const Navbar = () => {
     <>
       {showHamBurgerMenu && (
         <div
-          className='fixed inset-0 bg-black opacity-0 w-[100%] h-[100%] z-10'
+          className='section-padding navbar w-full fixed top-0 left-0 py-[1.8rem] flex justify-between gap-10 items-center z-30 backdrop-blur-md'
           onClick={() => setShowHamBurgerMenu(false)}
         />
       )}

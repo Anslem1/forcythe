@@ -10,24 +10,26 @@ interface TestimonyCardProps {
     logo: string
   }
   index: number
+  setAnimationFinished: (value: boolean) => void // Function to notify when animation finishes
 }
 
-const TestimonyCard: React.FC<TestimonyCardProps> = ({ testimony, index }) => {
+const TestimonyCard: React.FC<TestimonyCardProps> = ({
+  testimony,
+  index,
+  setAnimationFinished
+}) => {
   const [fadeName, setFadeName] = useState(false)
   const [fadeTestimony, setFadeTestimony] = useState<boolean[]>([]) // Array to track fade state of each word
   const [fadeRepresentative, setFadeRepresentative] = useState(false)
   const [fadePosition, setFadePosition] = useState(false)
 
-  // Create a reference for the card element
   const cardRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    // Initialize IntersectionObserver
     const observer = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            // When the element is in view, start the animation
             const timeouts: ReturnType<typeof setTimeout>[] = []
 
             const testimonyAnimationDuration = 5000 // 5 seconds
@@ -43,22 +45,29 @@ const TestimonyCard: React.FC<TestimonyCardProps> = ({ testimony, index }) => {
             // Step 2: Fade in each word in the testimony after the name fades in
             timeouts.push(
               setTimeout(() => {
-                setFadeTestimony(testimony.testimony.split(' ').map(() => true)) // Set fade state for each word to true
+                setFadeTestimony(testimony.testimony.split(' ').map(() => true))
               }, 700) // Starts fading the testimony after the name
             )
 
             // Step 3: Trigger representative fade-in at halfway point of the testimony animation
             timeouts.push(
               setTimeout(() => {
-                setFadeRepresentative(true) // Fade in the representative name
-              }, halfwayPoint) // Trigger at halfway point of the animation
+                setFadeRepresentative(true)
+              }, halfwayPoint)
             )
 
             // Step 4: Fade in position slightly after the representative fades in
             timeouts.push(
               setTimeout(() => {
-                setFadePosition(true) // Fade in the position after representative name fades in
-              }, halfwayPoint + 200) // Trigger 200ms after representative fades in
+                setFadePosition(true)
+              }, halfwayPoint + 200)
+            )
+
+            // Step 5: Mark animation as finished after all steps
+            timeouts.push(
+              setTimeout(() => {
+                setAnimationFinished(true) // Animation completed
+              }, testimonyAnimationDuration)
             )
 
             // Cleanup timeouts on unmount
@@ -67,23 +76,21 @@ const TestimonyCard: React.FC<TestimonyCardProps> = ({ testimony, index }) => {
         })
       },
       {
-        threshold: 0.5 // Trigger when 50% of the element is in view
+        threshold: 0.5
       }
     )
 
-    // Start observing the card element when it's rendered
-    const currentCardRef = cardRef.current;
+    const currentCardRef = cardRef.current
     if (currentCardRef) {
       observer.observe(currentCardRef)
     }
 
-    // Cleanup observer on component unmount
     return () => {
       if (currentCardRef) {
         observer.unobserve(currentCardRef)
       }
     }
-  }, [testimony])
+  }, [testimony, setAnimationFinished])
 
   return (
     <div
@@ -92,7 +99,6 @@ const TestimonyCard: React.FC<TestimonyCardProps> = ({ testimony, index }) => {
       style={{ left: ['0%', '20%', '40%', '30%', '50%'][index] }}
     >
       <div className='sm:basis-[58%] pr-3'>
-        {/* Fade in the name */}
         <p
           className={`text-base font-bold mb-4 transition-opacity duration-500 ${
             fadeName ? 'opacity-100' : 'opacity-0'
@@ -101,7 +107,6 @@ const TestimonyCard: React.FC<TestimonyCardProps> = ({ testimony, index }) => {
           <span>{testimony.name}</span>
         </p>
 
-        {/* Fade in each word of the testimony individually */}
         <div className='text-base leading-7 mb-3'>
           {testimony.testimony.split(' ').map((word, i) => (
             <span
@@ -118,7 +123,6 @@ const TestimonyCard: React.FC<TestimonyCardProps> = ({ testimony, index }) => {
           ))}
         </div>
 
-        {/* Fade in the representative */}
         <p>
           <span
             className={`text-[15px] font-semibold mb-4 transition-opacity duration-500 ${
@@ -128,7 +132,6 @@ const TestimonyCard: React.FC<TestimonyCardProps> = ({ testimony, index }) => {
             {testimony.representative}
             {', '}
           </span>
-          {/* Fade in the position smoothly after the representative */}
           <span
             className={`text-[15px] font-semibold mb-4 transition-opacity duration-500 ${
               fadePosition ? 'opacity-100' : 'opacity-0'
@@ -139,14 +142,13 @@ const TestimonyCard: React.FC<TestimonyCardProps> = ({ testimony, index }) => {
         </p>
       </div>
 
-      {/* Right Section - Representative Image */}
       <div className='w-full h-[24rem] sm:w-auto sm:h-auto sm:basis-[42%] relative object-top mt-3 sm:mt-0'>
         <div className='bg-accent z-0 w-full h-full absolute top-0 left-0 bg-opacity-10 animate-pulse rounded-xl'></div>
         <img
           alt={testimony.representative}
           className='rounded-xl relative object-top'
           src={testimony.representativeImage}
-          loading='lazy'
+          loading='eager'
           style={{
             position: 'absolute',
             height: '100%',
