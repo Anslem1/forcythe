@@ -26,20 +26,23 @@ const About = () => {
           </p>
         </div>
       </div>
-      <div className='flex lg:items-center flex-col md:flex-row'>
-        <div className='md:flex md:flex-col'>
+      <div className='flex lg:items-center flex-col md:flex-row  gap-3'>
+        <div className='md:flex md:flex-col w-full '>
           <div className='md:pr-10'>
-            <div className='border-2 border-accent2 mb-12 rounded-full grid gap-1 grid-cols-4 p-3.5'>
+            <div className='border-2 border-accent2 mb-12 rounded-full grid gap-1 grid-cols-4 p-3.5 '>
               {aboutWork.about.map((work, i) => (
                 <>
                   <div>
                     <div
-                      className={`overflow-hidden px-2 md:px-2.5 py-3 md:py-3.5 rounded-full text-center text-base font-medium cursor-pointer transition-all duration-300 bg-transparent    
-                      ${selectedAbout === i && 'bg-[#B3D0F2]'}
-                      ${selectedAbout === i && 'text-black'}
-                      `}
+                      className={`overflow-hidden px-2 md:px-2.5 py-3 md:py-3.5 rounded-full text-center text-base font-medium cursor-pointer transition-all duration-300 ${
+                        selectedAbout === i ? 'text-black' : ''
+                      }`}
                       onClick={() => handleAboutClick(i)}
                       ref={el => (aboutRef.current[i] = el)}
+                      style={{
+                        backgroundColor:
+                          selectedAbout === i ? '#B3D0F2' : 'transparent'
+                      }}
                     >
                       {work.concepts}
                     </div>

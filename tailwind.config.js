@@ -43,17 +43,17 @@ export default {
       animation: ['hover', 'focus']
     }
   },
-   plugins: [
+  plugins: [
     function ({ addUtilities }) {
       addUtilities({
         '.scrollbar-hidden': {
-          'scrollbar-width': 'none', /* Firefox */
-          '-ms-overflow-style': 'none', /* Internet Explorer 10+ */
+          'scrollbar-width': 'none' /* Firefox */,
+          '-ms-overflow-style': 'none' /* Internet Explorer 10+ */
         },
         '.scrollbar-hidden::-webkit-scrollbar': {
-          display: 'none', /* Chrome, Safari, and Opera */
-        },
+          display: 'none' /* Chrome, Safari, and Opera */
+        }
       })
-    },
-  ],
+    }
+  ]
 }

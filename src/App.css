@@ -1,3 +1,8 @@
+* {
+  box-sizing: border-box;
+}
+
+
 :root {
      ---primary-background: #030516;
      ---secondary-background: #1f3449;
