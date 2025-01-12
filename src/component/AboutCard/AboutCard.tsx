@@ -15,7 +15,7 @@ const AboutCard: React.FC<AboutCardProps> = ({ about }) => {
   const [fadeAboutText, setFadeAboutText] = useState<boolean[]>([]) // Array to track fade state of each word
 
   useEffect(() => {
-    const timeouts: NodeJS.Timeout[] = []
+    const timeouts: ReturnType<typeof setTimeout>[] = []
 
 
 
