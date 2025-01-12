@@ -2,12 +2,12 @@ import { useState } from 'react'
 
 const FooterContact = () => {
   const images = [
-    '/src/assets/icons/socials/facebook.svg',
-    '/src/assets/icons/socials/instagram.svg',
-    '/src/assets/icons/socials/x.svg',
-    '/src/assets/icons/socials/linkedin.svg',
-    '/src/assets/icons/socials/youtube.svg',
-    '/src/assets/icons/socials/Icon.svg'
+    '/assets/icons/socials/facebook.svg',
+    '/assets/icons/socials/instagram.svg',
+    '/assets/icons/socials/x.svg',
+    '/assets/icons/socials/linkedin.svg',
+    '/assets/icons/socials/youtube.svg',
+    '/assets/icons/socials/Icon.svg'
   ]
 
   const footerText = [
@@ -50,7 +50,7 @@ const FooterContact = () => {
           <div className='grid grid-cols-1 md:grid-cols-3 lg:col-span-2 gap-10 md:gap-0'>
             <div className='lg:pl-14 md:col-span-2 md:pr-10'>
               <img
-                src='/src/assets/logo/forcythe-logo-white.svg'
+                src='/assets/logo/forcythe-logo-white.svg'
                 alt='forcythe logo'
                 className='mb-5 md:mb-8'
               />

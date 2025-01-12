@@ -11,7 +11,7 @@ const Button = ({ showPlay, text }: { showPlay: boolean; text: string }) => {
               width='10'
               height='10'
               className='transition duration-300 group-hover:filter group-hover:invert group-hover:brightness-0'
-              src='/src/assets/icons/play.svg'
+              src='/assets/icons/play.svg'
               style={{ color: 'transparent' }}
             />
           )}

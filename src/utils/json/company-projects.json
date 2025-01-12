@@ -1,9 +1,9 @@
 {
      "projects": [
-          "../../../src/assets/images/company-projects/activity.svg",
-          "../../../src/assets/images/company-projects/starks.svg",
-          "../../../src/assets/images/company-projects/stac.svg",
-          "../../../src/assets/images/company-projects/phone.svg",
-          "../../../src/assets/images/company-projects/exec-pro.svg"
+          "/assets/images/company-projects/activity.svg",
+          "/assets/images/company-projects/starks.svg",
+          "/assets/images/company-projects/stac.svg",
+          "/assets/images/company-projects/phone.svg",
+          "/assets/images/company-projects/exec-pro.svg"
      ]
 }

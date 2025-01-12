@@ -3,17 +3,17 @@
           {
                "intro": "Experience",
                "text": "Decades of collective wisdom. Leverage our extensive experience to avoid common pitfalls and accelerate your business growth.",
-               "icon": "/src/assets/icons/layers-three.svg"
+               "icon": "/assets/icons/layers-three.svg"
           },
           {
                "intro": "Quick Support",
                "text": "We are your reliable partner, always there when you need us, ensuring smooth operations at every stage of your growth.",
-               "icon": "/src/assets/icons/layers-three.svg"
+               "icon": "/assets/icons/layers-three.svg"
           },
           {
                "intro": "Cost Savings",
                "text": "Maximising impact, minimising costs efficiency is key. We provide cost-effective solutions without compromising on quality.",
-               "icon": "/src/assets/icons/layers-three.svg"
+               "icon": "/assets/icons/layers-three.svg"
           }
      ]
 }

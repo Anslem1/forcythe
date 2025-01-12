@@ -72,14 +72,15 @@ const TestimonyCard: React.FC<TestimonyCardProps> = ({ testimony, index }) => {
     )
 
     // Start observing the card element when it's rendered
-    if (cardRef.current) {
-      observer.observe(cardRef.current)
+    const currentCardRef = cardRef.current;
+    if (currentCardRef) {
+      observer.observe(currentCardRef)
     }
 
     // Cleanup observer on component unmount
     return () => {
-      if (cardRef.current) {
-        observer.unobserve(cardRef.current)
+      if (currentCardRef) {
+        observer.unobserve(currentCardRef)
       }
     }
   }, [testimony])

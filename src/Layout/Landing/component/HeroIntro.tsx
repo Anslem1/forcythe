@@ -33,7 +33,7 @@ const HeroIntro = () => {
                 />
               </p>
             </div>
-            <Button showPlay={true} text={'Visit Blog'} />
+            <Button showPlay={true} text={'Book a call'} />
           </div>
         </div>
       </div>
